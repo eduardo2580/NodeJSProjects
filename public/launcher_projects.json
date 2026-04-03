@@ -10,5 +10,11 @@
     "path": "/TicTacToeGame/index.html",
     "description": "A classic Tic Tac Toe game for two players",
     "category": "Game"
+  },
+  {
+    "name": "Minesweeper Game",
+    "path": "/MinesweeperGame/index.html",
+    "description": "A classic Minesweeper game for players",
+    "category": "Game"
   }
 ]
