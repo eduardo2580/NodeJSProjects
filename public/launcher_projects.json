@@ -16,5 +16,11 @@
     "path": "/MinesweeperGame/index.html",
     "description": "A classic Minesweeper game for players",
     "category": "Game"
+  },
+  {
+    "name": "Mental Math Generator",
+    "path": "/mentalMathGenerator/index.html",
+    "description": "Generate random math problems for practice",
+    "category": "webapp"
   }
 ]
