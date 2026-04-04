@@ -30,9 +30,15 @@
     "category": "Clone"
   },
   {
-    "name": "Hulu Landing Clone",
+    "name": "Hulu Landing Page Clone",
     "path": "/HuluLandingPage/index.html",
     "description": "A clone of Hulu Landing Page",
+    "category": "Clone"
+  },
+  {
+    "name": "SpaceX Landing Page Clone",
+    "path": "/SpaceXLandingPage/index.html",
+    "description": "A clone of SpaceX Landing Page",
     "category": "Clone"
   }
 ]
