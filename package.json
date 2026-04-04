@@ -1,7 +1,7 @@
 {
-  "name": "node-launcher",
-  "version": "1.0.0",
-  "description": "Eduardo's Node.js Project Launcher",
+  "name": "js-launcher",
+  "version": "1.0.1",
+  "description": "Eduardo's JS Project Launcher",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",

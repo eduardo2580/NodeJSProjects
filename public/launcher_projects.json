@@ -27,6 +27,12 @@
     "name": "Netflix Clone",
     "path": "/AluraNetflix/index.html",
     "description": "A clone of Netflix made in the Alura course",
-    "category": "webapp"
+    "category": "Clone"
+  },
+  {
+    "name": "Hulu Landing Clone",
+    "path": "/HuluLandingPage/index.html",
+    "description": "A clone of Hulu Landing Page",
+    "category": "Clone"
   }
 ]
