@@ -40,5 +40,11 @@
     "path": "/SpaceXLandingPage/index.html",
     "description": "A clone of SpaceX Landing Page",
     "category": "Clone"
+  },
+  {
+    "name": "Tesla Landing Page Clone",
+    "path": "/TeslaLandingPage/index.html",
+    "description": "A clone of Tesla Landing Page",
+    "category": "Clone"
   }
 ]
