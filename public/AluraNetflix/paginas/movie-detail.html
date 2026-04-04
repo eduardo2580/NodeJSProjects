@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Filme - Netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/movie-detail.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar-simple">
+        <div class="navbar-content">
+            <a href="../catalogo/catalogo.html" class="logo">Netflix</a>
+            <div class="profile-dropdown">
+                <img id="profileImage" src="https://i.pravatar.cc/150?img=1" alt="Perfil">
+                <div class="dropdown-menu">
+                    <div class="dropdown-header">
+                        <img id="profileDropImage" src="https://i.pravatar.cc/150?img=1" alt="Perfil">
+                        <span id="profileDropName">Usuário</span>
+                    </div>
+                    <a href="../../index.html">Trocar de Perfil</a>
+                    <a href="#">Minha Lista</a>
+                    <a href="account.html">Conta</a>
+                    <a href="settings.html">Configurações</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Movie Detail Hero Section -->
+    <section class="movie-hero" id="movieHero">
+        <!-- Background image will be set by JavaScript -->
+    </section>
+
+    <!-- Movie Details -->
+    <section class="movie-details-container">
+        <div class="movie-info">
+            <div class="movie-header">
+                <h1 id="movieTitle">Título do Filme</h1>
+                <div class="movie-meta">
+                    <span class="year" id="movieYear">2024</span>
+                    <span class="rating" id="movieRating">
+                        <i class="fas fa-star"></i> 8.5/10
+                    </span>
+                    <span class="badge" id="movieBadge">Novo</span>
+                </div>
+            </div>
+
+            <div class="play-actions">
+                <button class="btn-play" id="playBtn">
+                    <i class="fas fa-play"></i> Assistir
+                </button>
+                <button class="btn-add-list" id="addListBtn">
+                    <i class="fas fa-plus"></i> Minha Lista
+                </button>
+                <button class="btn-share">
+                    <i class="fas fa-share"></i> Compartilhar
+                </button>
+            </div>
+
+            <div class="movie-specs">
+                <div class="spec">
+                    <label>Duração:</label>
+                    <span id="duration">2h 15min</span>
+                </div>
+                <div class="spec">
+                    <label>Gênero:</label>
+                    <span id="genres">Ação, Aventura, Ficção Científica</span>
+                </div>
+                <div class="spec">
+                    <label>Classificação:</label>
+                    <span id="classification">14+</span>
+                </div>
+                <div class="spec">
+                    <label>Produção:</label>
+                    <span id="production">Warner Bros, Legendary Pictures</span>
+                </div>
+            </div>
+
+            <div class="synopsis">
+                <h3>Sinopse</h3>
+                <p id="synopsis">Descrição do filme será carregada aqui...</p>
+            </div>
+
+            <div class="cast-crew">
+                <div class="cast-section">
+                    <h3>Elenco</h3>
+                    <div class="cast-list" id="castList">
+                        <!-- Cast will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="crew-section">
+                    <h3>Equipe</h3>
+                    <div class="crew-list">
+                        <div class="crew-item">
+                            <span class="crew-role">Diretor:</span>
+                            <span id="director">Desconhecido</span>
+                        </div>
+                        <div class="crew-item">
+                            <span class="crew-role">Roteirista:</span>
+                            <span id="writer">Desconhecido</span>
+                        </div>
+                        <div class="crew-item">
+                            <span class="crew-role">Produtor:</span>
+                            <span id="producer">Desconhecido</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="additional-info">
+                <h3>Informações Adicionais</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Idiomas Disponíveis:</label>
+                        <span id="languages">Português, Inglês, Espanhol</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Legendas:</label>
+                        <span id="subtitles">Português, Inglês, Espanhol, Francês</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Qualidade:</label>
+                        <span id="quality">4K Ultra HD</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Áudio:</label>
+                        <span id="audio">Dolby Atmos, Surround 5.1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <h3>Avaliações dos Usuários</h3>
+            <div class="rating-summary">
+                <div class="rating-display">
+                    <span class="big-rating" id="bigRating">8.5</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="total-reviews">Baseado em 12.543 avaliações</span>
+                </div>
+                <div class="rating-bars">
+                    <div class="rating-bar">
+                        <span>5★</span>
+                        <div class="bar"><div class="fill" style="width: 45%"></div></div>
+                        <span>45%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>4★</span>
+                        <div class="bar"><div class="fill" style="width: 30%"></div></div>
+                        <span>30%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>3★</span>
+                        <div class="bar"><div class="fill" style="width: 15%"></div></div>
+                        <span>15%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>1★</span>
+                        <div class="bar"><div class="fill" style="width: 10%"></div></div>
+                        <span>10%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Similar Content -->
+        <section class="similar-content">
+            <h3>Você Também Pode Gostar</h3>
+            <div class="similar-grid" id="similarGrid">
+                <!-- Similar items will be loaded here -->
+            </div>
+        </section>
+    </section>
+
+    <!-- Episode List (for series) -->
+    <section id="episodeSection" class="episodes-section" style="display: none;">
+        <h3>Episódios</h3>
+        <div class="episodes-list" id="episodesList">
+            <!-- Episodes will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Netflix</h4>
+                <a href="#">Sobre nós</a>
+                <a href="#">Imprensa</a>
+                <a href="#">Carreiras</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-section">
+                <h4>Suporte</h4>
+                <a href="#">Centro de Ajuda</a>
+                <a href="#">Garantia de Qualidade</a>
+                <a href="#">Configurações de Conta</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-section">
+                <h4>Comunidade</h4>
+                <a href="#">Blog</a>
+                <a href="#">Fórum</a>
+                <a href="#">Redes Sociais</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Cookies</a>
+                <a href="#">Preferências</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Netflix Clone. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/movie-detail.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

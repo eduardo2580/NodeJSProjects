@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Netflix - Minha Conta">
+    <title>Netflix - Minha Conta</title>
+    <link rel="stylesheet" href="../css/account.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar-simple">
+        <div class="navbar-container">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            <a href="../catalogo/catalogo.html" class="back-link">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Account Content -->
+    <main class="account-container">
+        <div class="account-wrapper">
+            <!-- Account Header -->
+            <section class="account-header">
+                <h1>Minha Conta</h1>
+                <p class="account-email" id="accountEmail">usuario@netflix.com</p>
+            </section>
+
+            <!-- Profile Management -->
+            <section class="account-section">
+                <h2>Perfis</h2>
+                <div class="profiles-list" id="profilesList">
+                    <!-- Profiles will be listed here -->
+                </div>
+                <button class="btn btn-secondary" onclick="addProfile()">
+                    <i class="fas fa-plus"></i> Adicionar Perfil
+                </button>
+            </section>
+
+            <!-- Membership -->
+            <section class="account-section">
+                <h2>Sua Adesão</h2>
+                <div class="membership-info">
+                    <div class="membership-item">
+                        <label>Plano Atual</label>
+                        <p class="membership-value" id="planName">Premium com Anúncios</p>
+                    </div>
+                    <div class="membership-item">
+                        <label>Renovação</label>
+                        <p class="membership-value" id="renewalDate">15 de Abril de 2026</p>
+                    </div>
+                    <div class="membership-item">
+                        <label>Valor da Mensalidade</label>
+                        <p class="membership-value">R$ 34,90</p>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" onclick="changePlan()">
+                    <i class="fas fa-credit-card"></i> Alterar Plano
+                </button>
+            </section>
+
+            <!-- Subscription Plans Modal -->
+            <div id="plansModal" class="modal" style="display: none;">
+                <div class="modal-content" style="max-width: 900px;">
+                    <button class="modal-close" onclick="closePlansModal()">&times;</button>
+                    <h2>Escolha seu Plano</h2>
+                    
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <h3>Padrão com Anúncios</h3>
+                            <p class="plan-price">R$ 6,90/mês</p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> HD (720p)</li>
+                                <li><i class="fas fa-check"></i> 1 Tela</li>
+                                <li><i class="fas fa-times"></i> Sem Download</li>
+                                <li><i class="fas fa-times"></i> Com Anúncios</li>
+                            </ul>
+                            <button class="btn btn-play" onclick="selectPlan('ads')">Escolher</button>
+                        </div>
+
+                        <div class="plan-card featured">
+                            <span class="badge">Popular</span>
+                            <h3>Padrão</h3>
+                            <p class="plan-price">R$ 49,90/mês</p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> Full HD (1080p)</li>
+                                <li><i class="fas fa-check"></i> 2 Telas</li>
+                                <li><i class="fas fa-check"></i> Download</li>
+                                <li><i class="fas fa-check"></i> Sem Anúncios</li>
+                            </ul>
+                            <button class="btn btn-play" onclick="selectPlan('standard')">Escolher</button>
+                        </div>
+
+                        <div class="plan-card">
+                            <h3>Premium</h3>
+                            <p class="plan-price">R$ 79,90/mês</p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 4K (Ultra HD)</li>
+                                <li><i class="fas fa-check"></i> 4 Telas</li>
+                                <li><i class="fas fa-check"></i> Download</li>
+                                <li><i class="fas fa-check"></i> Sem Anúncios</li>
+                            </ul>
+                            <button class="btn btn-play" onclick="selectPlan('premium')">Escolher</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <section class="account-section">
+                <h2>Forma de Pagamento</h2>
+                <div class="payment-info">
+                    <div class="payment-method">
+                        <i class="fas fa-credit-card"></i>
+                        <div>
+                            <p class="payment-label">Cartão de Crédito</p>
+                            <p class="payment-details">Visa terminado em 4567</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" onclick="updatePayment()">
+                    <i class="fas fa-edit"></i> Alterar Forma de Pagamento
+                </button>
+            </section>
+
+            <!-- Active Devices -->
+            <section class="account-section">
+                <h2>Dispositivos Ativos</h2>
+                <div class="devices-list" id="devicesList">
+                    <div class="device-item">
+                        <div>
+                            <p class="device-name">
+                                <i class="fas fa-laptop"></i> Seu Computador
+                            </p>
+                            <p class="device-info">Chrome no Windows • Ativo agora</p>
+                        </div>
+                        <button class="btn-danger" onclick="revokeDevice(this)">Desconectar</button>
+                    </div>
+                    <div class="device-item">
+                        <div>
+                            <p class="device-name">
+                                <i class="fas fa-mobile-alt"></i> Samsung Galaxy
+                            </p>
+                            <p class="device-info">Netflix App • Ativo há 2 horas</p>
+                        </div>
+                        <button class="btn-danger" onclick="revokeDevice(this)">Desconectar</button>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" onclick="signOutAll()">
+                    <i class="fas fa-sign-out-alt"></i> Desconectar de Todos os Dispositivos
+                </button>
+            </section>
+
+            <!-- Security -->
+            <section class="account-section">
+                <h2>Segurança</h2>
+                <button class="btn btn-secondary" onclick="changePassword()">
+                    <i class="fas fa-lock"></i> Alterar Senha
+                </button>
+                <button class="btn btn-secondary" onclick="enable2FA()">
+                    <i class="fas fa-shield-alt"></i> Ativar Autenticação de Dois Fatores
+                </button>
+            </section>
+
+            <!-- Account Recovery -->
+            <section class="account-section">
+                <h2>Recuperação de Conta</h2>
+                <p>Nos ajude a manter sua conta segura adicionando um e-mail ou número de telefone de recuperação.</p>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> Adicionar Telefone
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Adicionar E-mail
+                </button>
+            </section>
+
+            <!-- Danger Zone -->
+            <section class="account-section danger-zone">
+                <h2>Zona de Perigo</h2>
+                <button class="btn btn-danger" onclick="deleteAccount()">
+                    <i class="fas fa-trash"></i> Deletar Conta
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Password Change Modal -->
+    <div id="passwordModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePasswordModal()">&times;</button>
+            <h2>Alterar Senha</h2>
+            <form>
+                <div class="form-group">
+                    <label for="oldPassword">Senha Atual</label>
+                    <input type="password" id="oldPassword" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Nova Senha</label>
+                    <input type="password" id="newPassword" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Senha</label>
+                    <input type="password" id="confirmPassword" class="input-field" required>
+                </div>
+                <button type="button" class="btn btn-play" onclick="savePassword()">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/account.js"></script>
+</body>
+</html>

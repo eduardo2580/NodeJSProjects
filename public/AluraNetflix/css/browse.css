@@ -1,0 +1,155 @@
+/* Browse Page Styles */
+
+.browse-container {
+    padding: 100px 4% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.browse-filters {
+    margin-bottom: 40px;
+}
+
+.browse-filters h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #e50914;
+    border-color: #e50914;
+    color: white;
+}
+
+.browse-grid {
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    aspect-ratio: 2/3;
+}
+
+.grid-item:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.grid-item:hover img {
+    opacity: 0.8;
+}
+
+.grid-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transform: translateY(20px);
+}
+
+.grid-item:hover .grid-item-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.grid-item-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.grid-item-meta {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .browse-container {
+        padding: 100px 20px;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .browse-filters h1 {
+        font-size: 1.8rem;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+    
+    .filter-buttons {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .browse-container {
+        padding: 80px 15px;
+    }
+    
+    .browse-filters h1 {
+        font-size: 1.5rem;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}

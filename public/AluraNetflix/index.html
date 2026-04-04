@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Netflix - Selecione seu perfil para continuar assistindo.">
+    <title>Netflix - Quem está assistindo?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-principal">
+        <div class="header-container">
+            <img class="logo-netflix" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+        <header class="titulo-secao">
+            <h1>Quem está assistindo?</h1>
+        </header>
+        
+        <section class="secao-perfis" aria-label="Perfis de usuário disponíveis">
+            <ul class="lista-perfis">
+                <!-- perfil 1 -->
+                <li class="item-perfil">
+                    <a href="catalogo/catalogo.html" class="perfil" data-perfil="Fernanda">
+                        <figure class="avatar-container">
+                            <span class="imagem-perfil tema-cris" aria-hidden="true">
+                                <span class="icone-avatar">
+                                    <img src="assets/1.webp" alt="Perfil de Fernanda" width="128" height="128">
+                                </span>
+                            </span>
+                            <figcaption class="nome-perfil">Fernanda</figcaption>
+                        </figure>
+                    </a>
+                </li>
+
+                <!-- perfil 2 -->
+                <li class="item-perfil">
+                    <a href="catalogo/catalogo.html" class="perfil" data-perfil="Guilherme">
+                        <figure class="avatar-container">
+                            <span class="imagem-perfil tema-cris" aria-hidden="true">
+                                <span class="icone-avatar">
+                                    <img src="assets/2.webp" alt="Perfil de Guilherme" width="128" height="128">
+                                </span>
+                            </span>
+                            <figcaption class="nome-perfil">Guilherme</figcaption>
+                        </figure>
+                    </a>
+                </li>
+
+                <!-- perfil 3 -->
+                <li class="item-perfil">
+                    <a href="catalogo/catalogo.html" class="perfil" data-perfil="Thamiris">
+                        <figure class="avatar-container">
+                            <span class="imagem-perfil tema-cris" aria-hidden="true">
+                                <span class="icone-avatar">
+                                    <img src="assets/3.webp" alt="Perfil de Thamiris" width="128" height="128">
+                                </span>
+                            </span>
+                            <figcaption class="nome-perfil">Thamiris</figcaption>
+                        </figure>
+                    </a>
+                </li>
+
+                <!-- perfil 4 -->
+                <li class="item-perfil">
+                    <a href="catalogo/catalogo.html" class="perfil" data-perfil="Produtora">
+                        <figure class="avatar-container">
+                            <span class="imagem-perfil tema-cris" aria-hidden="true">
+                                <span class="icone-avatar">
+                                    <img src="assets/4.webp" alt="Perfil de Produtora" width="128" height="128">
+                                </span>
+                            </span>
+                            <figcaption class="nome-perfil">Produtora</figcaption>
+                        </figure>
+                    </a>
+                </li>
+            </ul>
+
+            <section class="gerenciar">
+                <button type="button" class="botao-gerenciar">Gerenciar perfis</button>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <nav class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="#" target="_blank">Perguntas frequentes</a></li>
+                <li><a href="#" target="_blank">Centro de ajuda</a></li>
+                <li><a href="#" target="_blank">Conta</a></li>
+                <li><a href="#" target="_blank">Imprensa</a></li>
+            </ul>
+        </nav>
+        <div class="footer-info">
+            <p>&copy; 2024 Netflix Alura. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Netflix - Configurações">
+    <title>Netflix - Configurações</title>
+    <link rel="stylesheet" href="../css/settings.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar-simple">
+        <div class="navbar-container">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            <a href="account.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+        </div>
+    </header>
+
+    <!-- Settings Content -->
+    <main class="settings-container">
+        <div class="settings-wrapper">
+            <h1>Configurações</h1>
+
+            <!-- General Settings -->
+            <section class="settings-section">
+                <h2>Configurações Gerais</h2>
+                <div class="setting-item">
+                    <label for="darkmode">Modo escuro</label>
+                    <input type="checkbox" id="darkmode" class="toggle-checkbox" checked>
+                </div>
+                <div class="setting-item">
+                    <label for="autoplay">Reprodução automática</label>
+                    <input type="checkbox" id="autoplay" class="toggle-checkbox" checked>
+                </div>
+                <div class="setting-item">
+                    <label for="autofill">Preenchimento automático de legendas</label>
+                    <input type="checkbox" id="autofill" class="toggle-checkbox">
+                </div>
+            </section>
+
+            <!-- Language & Region -->
+            <section class="settings-section">
+                <h2>Idioma e Região</h2>
+                <div class="setting-item">
+                    <label for="language">Idioma</label>
+                    <select id="language" class="select-field">
+                        <option value="pt-BR">Português (Brasil)</option>
+                        <option value="en-US">English (US)</option>
+                        <option value="es-ES">Español</option>
+                        <option value="fr-FR">Français</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="subtitle-lang">Idioma de legenda preferido</label>
+                    <select id="subtitle-lang" class="select-field">
+                        <option value="pt-BR">Português (Brasil)</option>
+                        <option value="en-US">English</option>
+                        <option value="es-ES">Español</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Playback Settings -->
+            <section class="settings-section">
+                <h2>Reprodução</h2>
+                <div class="setting-item">
+                    <label for="quality">Qualidade preferida</label>
+                    <select id="quality" class="select-field">
+                        <option value="auto">Automático</option>
+                        <option value="4k">4K (Ultra HD)</option>
+                        <option value="1080p">Full HD (1080p)</option>
+                        <option value="720p">HD (720p)</option>
+                        <option value="480p">SD (480p)</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="audio">Áudio preferido</label>
+                    <select id="audio" class="select-field">
+                        <option value="dolby">Dolby Atmos</option>
+                        <option value="51">5.1 Surround</option>
+                        <option value="stereo">Estéreo</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Notifications -->
+            <section class="settings-section">
+                <h2>Notificações</h2>
+                <div class="setting-item">
+                    <label for="notif-new">Novos lançamentos</label>
+                    <input type="checkbox" id="notif-new" class="toggle-checkbox" checked>
+                </div>
+                <div class="setting-item">
+                    <label for="notif-suggest">Recomendações</label>
+                    <input type="checkbox" id="notif-suggest" class="toggle-checkbox" checked>
+                </div>
+                <div class="setting-item">
+                    <label for="notif-download">Atualizações de Download</label>
+                    <input type="checkbox" id="notif-download" class="toggle-checkbox" checked>
+                </div>
+            </section>
+
+            <!-- Privacy & Security -->
+            <section class="settings-section">
+                <h2>Privacidade e Segurança</h2>
+                <div class="setting-item">
+                    <label for="data-collection">Permitir coleta de dados</label>
+                    <input type="checkbox" id="data-collection" class="toggle-checkbox" checked>
+                </div>
+                <div class="setting-item">
+                    <button class="btn-secondary" onclick="viewPrivacy()">
+                        <i class="fas fa-shield-alt"></i> Visualizar Política de Privacidade
+                    </button>
+                </div>
+                <div class="setting-item">
+                    <button class="btn-secondary" onclick="viewTerms()">
+                        <i class="fas fa-file-contract"></i> Termos de Serviço
+                    </button>
+                </div>
+            </section>
+
+            <!-- Parental Controls -->
+            <section class="settings-section">
+                <h2>Controle Parental</h2>
+                <div class="setting-item">
+                    <label for="parental-lock">Ativar PIN de Controle Parental</label>
+                    <input type="checkbox" id="parental-lock" class="toggle-checkbox">
+                </div>
+                <div class="setting-item" id="PIN-section" style="display: none;">
+                    <label for="parental-pin">Defina um PIN (4 dígitos)</label>
+                    <input type="password" id="parental-pin" class="input-field" maxlength="4" placeholder="0000">
+                </div>
+                <div class="setting-item">
+                    <label for="content-rating">Classificação de Conteúdo Permitida</label>
+                    <select id="content-rating" class="select-field">
+                        <option value="all">Sem restrições</option>
+                        <option value="12">12+</option>
+                        <option value="14">14+</option>
+                        <option value="16">16+</option>
+                        <option value="18">18+</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Download Settings -->
+            <section class="settings-section">
+                <h2>Download</h2>
+                <div class="setting-item">
+                    <label for="wifi-only">Apenas em Wi-Fi</label>
+                    <input type="checkbox" id="wifi-only" class="toggle-checkbox" checked>
+                </div>
+                <div class="setting-item">
+                    <button class="btn-secondary">
+                        <i class="fas fa-folder"></i> Gerenciar Downloads
+                    </button>
+                </div>
+            </section>
+
+            <!-- Accessibility -->
+            <section class="settings-section">
+                <h2>Acessibilidade</h2>
+                <div class="setting-item">
+                    <label for="high-contrast">Contraste Alto</label>
+                    <input type="checkbox" id="high-contrast" class="toggle-checkbox">
+                </div>
+                <div class="setting-item">
+                    <label for="text-size">Tamanho de Texto</label>
+                    <select id="text-size" class="select-field">
+                        <option value="normal">Normal</option>
+                        <option value="large">Grande</option>
+                        <option value="xlarge">Muito Grande</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Save Button -->
+            <div class="settings-footer">
+                <button class="btn btn-play" onclick="saveSettings()">
+                    <i class="fas fa-save"></i> Salvar Alterações
+                </button>
+                <p class="success-message" id="successMessage" style="display: none;">
+                    ✓ Configurações salvas com sucesso!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/settings.js"></script>
+</body>
+</html>

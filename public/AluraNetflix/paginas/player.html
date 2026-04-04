@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reprodutor - Netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/player.css">
+</head>
+<body>
+    <!-- Video Player Container -->
+    <div class="player-container" id="playerContainer">
+        <!-- Video Element -->
+        <video id="videoPlayer" class="video-player">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-library/sample/BigBuckBunny.mp4" type="video/mp4">
+            Seu navegador não suporta HTML5 video.
+        </video>
+
+        <!-- Player Controls -->
+        <div class="player-controls" id="playerControls">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <input type="range" id="progressInput" class="progress-input" min="0" max="100" value="0">
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls-bottom">
+                <div class="controls-left">
+                    <button id="playBtn" class="control-btn" title="Reproduzir/Pausar">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="muteBtn" class="control-btn" title="Mutar/Desmutar">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
+                    <span id="timeDisplay" class="time-display">0:00 / 0:00</span>
+                </div>
+
+                <div class="controls-right">
+                    <button id="subtitleBtn" class="control-btn" title="Legendas">
+                        <i class="fas fa-closed-captioning"></i>
+                    </button>
+                    <button id="settingsBtn" class="control-btn" title="Configurações">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button id="fullscreenBtn" class="control-btn" title="Tela Cheia">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Menu -->
+        <div class="settings-menu" id="settingsMenu" style="display: none;">
+            <div class="settings-item" data-setting="quality">
+                <span>Qualidade</span>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="settings-item" data-setting="speed">
+                <span>Velocidade</span>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="settings-item" data-setting="help">
+                <span>Informações do Cliente</span>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- Quality Submenu -->
+        <div class="settings-submenu" id="qualitySubmenu" style="display: none;">
+            <div class="submenu-back">
+                <i class="fas fa-chevron-left"></i>
+                <span>Voltar</span>
+            </div>
+            <div class="quality-option active" data-quality="auto">
+                <span>Automática</span>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="quality-option" data-quality="1080">720p</div>
+            <div class="quality-option" data-quality="720">480p</div>
+            <div class="quality-option" data-quality="480">360p</div>
+        </div>
+
+        <!-- Speed Submenu -->
+        <div class="settings-submenu" id="speedSubmenu" style="display: none;">
+            <div class="submenu-back">
+                <i class="fas fa-chevron-left"></i>
+                <span>Voltar</span>
+            </div>
+            <div class="speed-option" data-speed="0.25">0.25x</div>
+            <div class="speed-option" data-speed="0.5">0.5x</div>
+            <div class="speed-option" data-speed="0.75">0.75x</div>
+            <div class="speed-option active" data-speed="1">Normal</div>
+            <div class="speed-option" data-speed="1.25">1.25x</div>
+            <div class="speed-option" data-speed="1.5">1.5x</div>
+            <div class="speed-option" data-speed="2">2x</div>
+        </div>
+
+        <!-- Subtitles Menu -->
+        <div class="subtitles-menu" id="subtitlesMenu" style="display: none;">
+            <div class="subtitles-option active" data-lang="off">Desligado</div>
+            <div class="subtitles-option" data-lang="pt">Português</div>
+            <div class="subtitles-option" data-lang="en">Inglês</div>
+            <div class="subtitles-option" data-lang="es">Espanhol</div>
+            <div class="subtitles-option" data-lang="fr">Francês</div>
+        </div>
+
+        <!-- Movie Info Overlay -->
+        <div class="movie-info-overlay" id="movieInfoOverlay">
+            <div class="movie-info-content">
+                <h2 id="movieTitle">Título do Filme</h2>
+                <p id="movieDescription">Descrição do filme</p>
+                <button id="backBtn" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Voltar ao Catálogo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Info -->
+    <div class="keyboard-shortcuts" id="keyboardShortcuts" style="display: none;">
+        <div class="shortcuts-content">
+            <h3>Atalhos de Teclado</h3>
+            <div class="shortcuts-grid">
+                <div class="shortcut">
+                    <span class="key">Espaço</span>
+                    <span>Reproduzir/Pausar</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F</span>
+                    <span>Tela Cheia</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">M</span>
+                    <span>Mutar</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">→ / ←</span>
+                    <span>Avançar/Retroceder 5s</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">0-9</span>
+                    <span>Ir para % do vídeo</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">J / L</span>
+                    <span>Pular 10 segundos</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">C</span>
+                    <span>Legendas</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">?</span>
+                    <span>Help</span>
+                </div>
+            </div>
+            <button id="closeShortcuts" class="btn-close">Fechar</button>
+        </div>
+    </div>
+
+    <script src="../js/player.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Netflix - Catálogo de filmes e séries">
+    <title>Netflix - Catálogo</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-left">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            <nav class="navbar-nav">
+                <ul class="nav-links">
+                    <li><a href="catalogo.html" class="active">Início</a></li>
+                    <li><a href="#series">Séries</a></li>
+                    <li><a href="#filmes">Filmes</a></li>
+                    <li><a href="#novo">Novidades</a></li>
+                    <li><a href="#popular">Populares</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <form class="search-form" role="search">
+                <input type="text" class="search-input" placeholder="Títulos, pessoas, gêneros..." aria-label="Buscar">
+                <i class="fas fa-search search-icon"></i>
+            </form>
+            <div class="navbar-profile">
+                <span class="profile-name" id="profileName">Perfil</span>
+                <img class="profile-icon" id="profileIcon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Perfil do usuário">
+                <a href="../index.html" class="logout-btn" title="Mudar perfil">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Content -->
+    <section class="featured-section" id="featured">
+        <div class="featured-content">
+            <h2 class="featured-title">Destaque</h2>
+            <p class="featured-description">Descubra as melhores produções em destaque</p>
+            <div class="featured-buttons">
+                <button class="btn btn-play">
+                    <i class="fas fa-play"></i> Assistir Agora
+                </button>
+                <button class="btn btn-info">
+                    <i class="fas fa-info-circle"></i> Mais Informações
+                </button>
+            </div>
+        </div>
+        <div class="featured-background">
+            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1200&h=600&fit=crop" alt="Conteúdo em destaque">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="sliders-container" id="main-content">
+        <!-- Sections will be dynamically generated -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-catalog">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Netflix</h3>
+                <ul class="footer-links-list">
+                    <li><a href="#">Sobre a Netflix</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Comunidade</h3>
+                <ul class="footer-links-list">
+                    <li><a href="#">Centro de Ajuda</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Relatório de Conta</a></li>
+                    <li><a href="#">Fórum</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links-list">
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Avisos mais Legais</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Netflix Alura. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para detalhes do conteúdo -->
+    <div class="modal" id="contentModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar modal">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

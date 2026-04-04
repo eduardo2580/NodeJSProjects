@@ -22,5 +22,11 @@
     "path": "/mentalMathGenerator/index.html",
     "description": "Generate random math problems for practice",
     "category": "webapp"
+  },
+  {
+    "name": "Netflix Clone",
+    "path": "/AluraNetflix/index.html",
+    "description": "A clone of Netflix made in the Alura course",
+    "category": "webapp"
   }
 ]

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa - Netflix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/search-results.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar-simple">
+        <div class="navbar-content">
+            <a href="../catalogo/catalogo.html" class="logo">Netflix</a>
+            <div class="profile-dropdown">
+                <img id="profileImage" src="https://i.pravatar.cc/150?img=1" alt="Perfil">
+                <div class="dropdown-menu">
+                    <div class="dropdown-header">
+                        <img id="profileDropImage" src="https://i.pravatar.cc/150?img=1" alt="Perfil">
+                        <span id="profileDropName">Usuário</span>
+                    </div>
+                    <a href="../../index.html">Trocar de Perfil</a>
+                    <a href="my-list.html">Minha Lista</a>
+                    <a href="account.html">Conta</a>
+                    <a href="settings.html">Configurações</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <h1>Resultados da Pesquisa</h1>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Pesquisar..." value="">
+                <button id="clearSearch" class="clear-btn" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Info -->
+    <section class="results-info">
+        <div class="info-container">
+            <p id="resultsText"></p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="movies">Filmes</button>
+                <button class="filter-btn" data-filter="series">Séries</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Grid -->
+    <section class="results-section">
+        <div class="results-container">
+            <div id="resultsGrid" class="results-grid">
+                <!-- Results will be loaded here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h2>Nenhum resultado encontrado</h2>
+                <p>Tente pesquisar por outro termo</p>
+                <a href="../catalogo/catalogo.html" class="btn-back">Voltar ao Catálogo</a>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>Pesquisando...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sort Options -->
+    <section class="sort-section">
+        <div class="sort-container">
+            <label for="sortBy">Ordenar por:</label>
+            <select id="sortBy" class="sort-select">
+                <option value="relevance">Relevância</option>
+                <option value="rating">Nota (Maior para Menor)</option>
+                <option value="year">Ano (Mais Recente)</option>
+                <option value="name">Nome (A-Z)</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Netflix</h4>
+                <a href="#">Sobre nós</a>
+                <a href="#">Imprensa</a>
+                <a href="#">Carreiras</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-section">
+                <h4>Suporte</h4>
+                <a href="help.html">Centro de Ajuda</a>
+                <a href="#">Configurações de Conta</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Netflix Clone. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/search-results.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

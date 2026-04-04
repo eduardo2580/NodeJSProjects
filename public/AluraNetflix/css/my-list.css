@@ -1,0 +1,170 @@
+/* My List Page Styles */
+
+.mylist-container {
+    padding: 100px 4% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.mylist-header {
+    margin-bottom: 40px;
+}
+
+.mylist-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.sort-btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sort-btn:hover,
+.sort-btn.active {
+    background-color: #e50914;
+    border-color: #e50914;
+}
+
+.mylist-content {
+    width: 100%;
+}
+
+.mylist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.mylist-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    aspect-ratio: 2/3;
+    background: #222;
+}
+
+.mylist-item:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+}
+
+.mylist-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mylist-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.mylist-item:hover .mylist-item-overlay {
+    opacity: 1;
+}
+
+.mylist-item-overlay button {
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.mylist-item-overlay button:hover {
+    background-color: #e50914;
+    border-color: #e50914;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.empty-state h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.empty-state p {
+    color: #b3b3b3;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .mylist-container {
+        padding: 100px 20px;
+    }
+    
+    .mylist-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mylist-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .mylist-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mylist-container {
+        padding: 80px 15px;
+    }
+    
+    .mylist-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .mylist-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}

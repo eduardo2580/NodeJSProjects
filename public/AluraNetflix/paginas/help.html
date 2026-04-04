@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Netflix - Ajuda e Suporte">
+    <title>Netflix - Ajuda</title>
+    <link rel="stylesheet" href="../css/help.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar-simple">
+        <div class="navbar-container">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            <a href="../catalogo/catalogo.html" class="back-link">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Help Content -->
+    <main class="help-container">
+        <div class="help-wrapper">
+            <!-- Hero Section -->
+            <section class="help-hero">
+                <h1>Centro de Ajuda Netflix</h1>
+                <p>Como podemos ajudá-lo?</p>
+                <div class="search-box">
+                    <input type="text" id="helpSearch" placeholder="Digite sua pergunta ou palavra-chave...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="quick-links">
+                <h2>Tópicos Populares</h2>
+                <div class="links-grid">
+                    <a href="#billing" class="quick-link" onclick="expandTopic('billing')">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Cobrança</span>
+                    </a>
+                    <a href="#account" class="quick-link" onclick="expandTopic('account')">
+                        <i class="fas fa-user"></i>
+                        <span>Sua Conta</span>
+                    </a>
+                    <a href="#streaming" class="quick-link" onclick="expandTopic('streaming')">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Streaming</span>
+                    </a>
+                    <a href="#devices" class="quick-link" onclick="expandTopic('devices')">
+                        <i class="fas fa-tv"></i>
+                        <span>Dispositivos</span>
+                    </a>
+                    <a href="#profiles" class="quick-link" onclick="expandTopic('profiles')">
+                        <i class="fas fa-users"></i>
+                        <span>Perfis</span>
+                    </a>
+                    <a href="#downloads" class="quick-link" onclick="expandTopic('downloads')">
+                        <i class="fas fa-download"></i>
+                        <span>Downloads</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- FAQs -->
+            <section class="faq-section">
+                <h2>Perguntas Frequentes</h2>
+
+                <!-- Billing FAQ -->
+                <div class="faq-category" id="billing-faq">
+                    <h3>Cobrança e Planos</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Como cancelo minha assinatura?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Você pode cancelar sua assinatura a qualquer momento. Acesse Configurações da Conta, vá para Adesão e selecione Cancelar Adesão. Se estiver usando um aplicativo móvel, talvez seja necessário cancelar através das configurações de cobrança do seu dispositivo.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Qual é a diferença entre os planos?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Padrão com Anúncios (R$ 6,90/mês): HD em 1 tela. Padrão (R$ 49,90/mês): Full HD em 2 telas. Premium (R$ 79,90/mês): 4K em 4 telas. Todos os planos incluem acesso ao catálogo completo.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Quando serei cobrado?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Você será cobrado no primeiro dia de cada mês ou conforme o ciclo de cobrança escolhido. O valor será debitado automaticamente do seu método de pagamento registrado.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Vocês oferecem períodos de teste gratuitos?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Alguns planos podem oferecer um período de teste. Verifique sua conta para ver se você é elegível. O período de teste deve ser cancelado antes do vencimento para não ser cobrado.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account FAQ -->
+                <div class="faq-category" id="account-faq">
+                    <h3>Sua Conta</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Como altero minha senha?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Acesse Configurações da Conta, clique em Segurança e selecione Alterar Senha. Você precisará inserir sua senha atual e a nova senha.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Minha conta foi hackeada. O que faço?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Altere sua senha imediatamente. Defina uma senha forte e única. Se continuar tendo problemas, entre em contato com nosso suporte ao cliente. Considere usar autenticação de dois fatores.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Como edito informações da minha conta?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Na seção Minha Conta, você pode atualizar seu e-mail, alterar sua senha, gerenciar métodos de pagamento e muito mais.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Streaming FAQ -->
+                <div class="faq-category" id="streaming-faq">
+                    <h3>Streaming e Reprodução</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Por que a imagem está pixelada?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Isso geralmente indica uma conexão de internet lenta. Tente: reduzir a qualidade de streaming, fechar outros aplicativos, ou conectar a um ponto de internet mais próximo. Se o problema persistir, reinicie seu roteador.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Posso assistir offline?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Sim! Com planos Padrão e Premium, você pode fazer download de títulos para assistir depois. Downloads expiram após 30 dias e precisam ser renovados periodicamente.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Como mudo a qualidade de streaming?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Acesse Configurações, procure por "Reprodução" e selecione sua qualidade preferida. Você pode escolher entre Automático, 4K, 1080p, 720p ou 480p.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Devices FAQ -->
+                <div class="faq-category" id="devices-faq">
+                    <h3>Dispositivos</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Em quantos dispositivos posso assistir?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Depende do seu plano. Padrão com Anúncios: 1 tela. Padrão: 2 telas. Premium: 4 telas simultâneas.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Como conecto a Netflix na minha TV?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Você pode usar Smart TVs com Netflix pré-instalado, ou conectar um streaming device como Apple TV, Roku, Fire TV, Chromecast ou Xbox. Faça login com suas credenciais Netflix.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Como remoto alguém da minha conta?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Na seção Dispositivos Ativos da sua conta, você pode ver e desconectar dispositivos. Use "Desconectar de Todos os Dispositivos" para sair de tudo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Support -->
+            <section class="contact-support">
+                <h2>Ainda precisa de ajuda?</h2>
+                <p>Nossa equipe de suporte está aqui para ajudar</p>
+                <button class="btn btn-play" onclick="contactSupport()">
+                    <i class="fas fa-headset"></i> Contate o Suporte
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/help.js"></script>
+</body>
+</html>

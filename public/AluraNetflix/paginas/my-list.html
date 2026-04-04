@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Netflix - Minha Lista">
+    <title>Netflix - Minha Lista</title>
+    <link rel="stylesheet" href="../catalogo/catalogo.css">
+    <link rel="stylesheet" href="../css/my-list.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-left">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
+            <nav class="navbar-nav">
+                <ul class="nav-links">
+                    <li><a href="../catalogo/catalogo.html">Início</a></li>
+                    <li><a href="browse.html">Explorar</a></li>
+                    <li><a href="my-list.html" class="active">Minha Lista</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <form class="search-form" role="search">
+                <input type="text" class="search-input" placeholder="Títulos...">
+                <i class="fas fa-search search-icon"></i>
+            </form>
+            <div class="navbar-profile">
+                <span class="profile-name" id="profileName">Perfil</span>
+                <img class="profile-icon" id="profileIcon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile">
+            </div>
+        </div>
+    </header>
+
+    <!-- My List Content -->
+    <main class="mylist-container">
+        <section class="mylist-header">
+            <h1>Minha Lista</h1>
+            <div class="sort-buttons">
+                <button class="sort-btn" data-sort="recent">Tudo</button>
+                <button class="sort-btn" data-sort="movies">Filmes</button>
+                <button class="sort-btn" data-sort="series">Séries</button>
+            </div>
+        </section>
+
+        <section class="mylist-content">
+            <div class="mylist-grid" id="mylistGrid">
+                <!-- Items will be added here -->
+            </div>
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fas fa-bookmark" style="font-size: 48px; color: #666; margin-bottom: 20px;"></i>
+                <h2>Sua lista está vazia</h2>
+                <p>Adicione títulos à sua lista para salvá-los aqui</p>
+                <a href="browse.html" class="btn btn-play">
+                    <i class="fas fa-search"></i> Explorar Conteúdo
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-catalog">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Netflix</h3>
+                <ul class="footer-links-list">
+                    <li><a href="#">Sobre a Netflix</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Netflix Alura.</p>
+        </div>
+    </footer>
+
+    <script src="../js/my-list.js"></script>
+</body>
+</html>
