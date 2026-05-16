@@ -64,5 +64,11 @@
     "path": "/DuckHunt/index.html",
     "description": "A classic Duck Hunt game for players",
     "category": "Game"
+  },
+  {
+    "name": "PacMan Game",
+    "path": "/PacMan/index.html",
+    "description": "A classic PacMan game for players",
+    "category": "Game"
   }
 ]
