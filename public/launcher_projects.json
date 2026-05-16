@@ -76,5 +76,11 @@
     "path": "/DoodleJump/index.html",
     "description": "A Doodle Jump game for players",
     "category": "Game"
+  },
+  {
+    "name": "Breakout Game",
+    "path": "/Breakout/index.html",
+    "description": "A classic Breakout game for players",
+    "category": "Game"
   }
 ]
