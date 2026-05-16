@@ -82,5 +82,11 @@
     "path": "/Breakout/index.html",
     "description": "A classic Breakout game for players",
     "category": "Game"
+  },
+  {
+    "name": "Pong Game",
+    "path": "/PongGame/index.html",
+    "description": "A classic Pong game for players",
+    "category": "Game"
   }
 ]
