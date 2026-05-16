@@ -1,316 +1,353 @@
-        // Translations
-        const translations = {
-            en: {
-                title: "Mental Math Generator",
-                subtitle: "Practice quick mental calculations",
-                correctLabel: "Correct",
-                totalLabel: "Total",
-                wrongLabel: "Wrong",
-                yourAnswer: "Your answer",
-                submit: "Submit",
-                newProblem: "New Problem",
-                skip: "Skip",
-                reset: "Reset",
-                rangeLabel: "Number Range",
-                termsLabel: "Terms",
-                negativeLabel: "Negative Numbers",
-                operationsLabel: "Operations",
-                positiveOnly: "Positive only",
-                allowNegative: "Allow negative",
-                terms2: "2 terms",
-                terms3: "3 terms",
-                terms4: "4 terms",
-                clickToStart: "Click \"New Problem\" to start",
-                correct: "Correct! ✓",
-                wrong: "Wrong! The answer was",
-                selectOperation: "Please select at least one operation!",
-                pageTitle: "Mental Math Generator",
-                pageDescription: "Practice mental math with random problems. Available in English, Portuguese, and Spanish."
-            },
-            pt: {
-                title: "Gerador de Matemática Mental",
-                subtitle: "Pratique cálculos mentais rápidos",
-                correctLabel: "Corretas",
-                totalLabel: "Total",
-                wrongLabel: "Erradas",
-                yourAnswer: "Sua resposta",
-                submit: "Confirmar",
-                newProblem: "Novo Problema",
-                skip: "Pular",
-                reset: "Reiniciar",
-                rangeLabel: "Faixa de Números",
-                termsLabel: "Termos",
-                negativeLabel: "Números Negativos",
-                operationsLabel: "Operações",
-                positiveOnly: "Apenas positivos",
-                allowNegative: "Permitir negativos",
-                terms2: "2 termos",
-                terms3: "3 termos",
-                terms4: "4 termos",
-                clickToStart: "Clique em \"Novo Problema\" para começar",
-                correct: "Correto! ✓",
-                wrong: "Errado! A resposta era",
-                selectOperation: "Por favor, selecione pelo menos uma operação!",
-                pageTitle: "Gerador de Matemática Mental",
-                pageDescription: "Pratique matemática mental com problemas aleatórios. Disponível em Inglês, Português e Espanhol."
-            },
-            es: {
-                title: "Generador de Matemáticas Mentales",
-                subtitle: "Practica cálculos mentales rápidos",
-                correctLabel: "Correctas",
-                totalLabel: "Total",
-                wrongLabel: "Incorrectas",
-                yourAnswer: "Tu respuesta",
-                submit: "Confirmar",
-                newProblem: "Nuevo Problema",
-                skip: "Saltar",
-                reset: "Reiniciar",
-                rangeLabel: "Rango de Números",
-                termsLabel: "Términos",
-                negativeLabel: "Números Negativos",
-                operationsLabel: "Operaciones",
-                positiveOnly: "Solo positivos",
-                allowNegative: "Permitir negativos",
-                terms2: "2 términos",
-                terms3: "3 términos",
-                terms4: "4 términos",
-                clickToStart: "Haz clic en \"Nuevo Problema\" para empezar",
-                correct: "¡Correcto! ✓",
-                wrong: "¡Incorrecto! La respuesta era",
-                selectOperation: "¡Por favor, selecciona al menos una operación!",
-                pageTitle: "Generador de Matemáticas Mentales",
-                pageDescription: "Practica matemáticas mentales con problemas aleatorios. Disponible en Inglés, Portugués y Español."
+var translations = {
+    en: {
+        title: "Mental Math Generator",
+        subtitle: "Practice quick mental calculations",
+        correctLabel: "Correct",
+        totalLabel: "Total",
+        wrongLabel: "Wrong",
+        yourAnswer: "Your answer",
+        submit: "Submit",
+        newProblem: "New Problem",
+        skip: "Skip",
+        reset: "Reset",
+        rangeLabel: "Number Range",
+        termsLabel: "Terms",
+        negativeLabel: "Negative Numbers",
+        operationsLabel: "Operations",
+        positiveOnly: "Positive only",
+        allowNegative: "Allow negative",
+        terms2: "2 terms",
+        terms3: "3 terms",
+        terms4: "4 terms",
+        clickToStart: "Click \"New Problem\" to start",
+        correctMsg: "Correct!",
+        wrongMsg: "Wrong! The answer was",
+        selectOperation: "Please select at least one operation!"
+    },
+    pt: {
+        title: "Gerador de Matemática Mental",
+        subtitle: "Pratique cálculos mentais rápidos",
+        correctLabel: "Corretas",
+        totalLabel: "Total",
+        wrongLabel: "Erradas",
+        yourAnswer: "Sua resposta",
+        submit: "Confirmar",
+        newProblem: "Novo Problema",
+        skip: "Pular",
+        reset: "Reiniciar",
+        rangeLabel: "Faixa de Números",
+        termsLabel: "Termos",
+        negativeLabel: "Números Negativos",
+        operationsLabel: "Operações",
+        positiveOnly: "Apenas positivos",
+        allowNegative: "Permitir negativos",
+        terms2: "2 termos",
+        terms3: "3 termos",
+        terms4: "4 termos",
+        clickToStart: "Clique em \"Novo Problema\" para começar",
+        correctMsg: "Correto!",
+        wrongMsg: "Errado! A resposta era",
+        selectOperation: "Por favor, selecione pelo menos uma operação!"
+    },
+    es: {
+        title: "Generador de Matemáticas Mentales",
+        subtitle: "Practica cálculos mentales rápidos",
+        correctLabel: "Correctas",
+        totalLabel: "Total",
+        wrongLabel: "Incorrectas",
+        yourAnswer: "Tu respuesta",
+        submit: "Confirmar",
+        newProblem: "Nuevo Problema",
+        skip: "Saltar",
+        reset: "Reiniciar",
+        rangeLabel: "Rango de Números",
+        termsLabel: "Términos",
+        negativeLabel: "Números Negativos",
+        operationsLabel: "Operaciones",
+        positiveOnly: "Solo positivos",
+        allowNegative: "Permitir negativos",
+        terms2: "2 términos",
+        terms3: "3 términos",
+        terms4: "4 términos",
+        clickToStart: "Haz clic en \"Nuevo Problema\" para empezar",
+        correctMsg: "¡Correcto!",
+        wrongMsg: "¡Incorrecto! La respuesta era",
+        selectOperation: "¡Por favor, selecciona al menos una operación!"
+    }
+};
+
+var currentLang = 'en';
+var currentProblem = null;
+var stats = { correct: 0, wrong: 0, total: 0 };
+var settings = {
+    range: 100,
+    terms: 2,
+    allowNegative: false,
+    operations: ['+', '-', '*']
+};
+
+var langSelector = document.getElementById('langSelector');
+var titleEl = document.getElementById('title');
+var subtitleEl = document.getElementById('subtitle');
+var correctCountEl = document.getElementById('correctCount');
+var totalCountEl = document.getElementById('totalCount');
+var wrongCountEl = document.getElementById('wrongCount');
+var correctLabelEl = document.getElementById('correctLabel');
+var totalLabelEl = document.getElementById('totalLabel');
+var wrongLabelEl = document.getElementById('wrongLabel');
+var problemEl = document.getElementById('problem');
+var answerInput = document.getElementById('answerInput');
+var submitBtn = document.getElementById('submitBtn');
+var newProblemBtn = document.getElementById('newProblemBtn');
+var skipBtn = document.getElementById('skipBtn');
+var resetBtn = document.getElementById('resetBtn');
+var rangeSelect = document.getElementById('rangeSelect');
+var termsSelect = document.getElementById('termsSelect');
+var negativeSelect = document.getElementById('negativeSelect');
+var rangeLabelEl = document.getElementById('rangeLabel');
+var termsLabelEl = document.getElementById('termsLabel');
+var negativeLabelEl = document.getElementById('negativeLabel');
+var operationsLabelEl = document.getElementById('operationsLabel');
+var opBtns = document.querySelectorAll('.op-btn');
+
+function t(key) {
+    if (translations[currentLang] && translations[currentLang][key]) {
+        return translations[currentLang][key];
+    }
+    return key;
+}
+
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function updateUI() {
+    titleEl.textContent = t('title');
+    subtitleEl.textContent = t('subtitle');
+    correctLabelEl.textContent = t('correctLabel');
+    totalLabelEl.textContent = t('totalLabel');
+    wrongLabelEl.textContent = t('wrongLabel');
+    answerInput.placeholder = t('yourAnswer');
+    submitBtn.textContent = t('submit');
+    newProblemBtn.textContent = t('newProblem');
+    skipBtn.textContent = t('skip');
+    resetBtn.textContent = t('reset');
+    rangeLabelEl.textContent = t('rangeLabel');
+    termsLabelEl.textContent = t('termsLabel');
+    negativeLabelEl.textContent = t('negativeLabel');
+    operationsLabelEl.textContent = t('operationsLabel');
+
+    negativeSelect.options[0].textContent = t('positiveOnly');
+    negativeSelect.options[1].textContent = t('allowNegative');
+    termsSelect.options[0].textContent = t('terms2');
+    termsSelect.options[1].textContent = t('terms3');
+    termsSelect.options[2].textContent = t('terms4');
+
+    document.documentElement.lang = currentLang;
+
+    if (!currentProblem) {
+        problemEl.textContent = t('clickToStart');
+    }
+}
+
+function updateStatsDisplay() {
+    correctCountEl.textContent = stats.correct;
+    wrongCountEl.textContent = stats.wrong;
+    totalCountEl.textContent = stats.total;
+}
+
+function readSettings() {
+    settings.range = parseInt(rangeSelect.value, 10);
+    settings.terms = parseInt(termsSelect.value, 10);
+    settings.allowNegative = (negativeSelect.value === 'true');
+
+    var activeOps = [];
+    for (var i = 0; i < opBtns.length; i++) {
+        if (opBtns[i].className.indexOf('active') !== -1) {
+            activeOps.push(opBtns[i].getAttribute('data-op'));
+        }
+    }
+    settings.operations = activeOps;
+}
+
+function generateProblem() {
+    var nums = [];
+    var ops = [];
+    var numTerms = settings.terms;
+    var rangeMax = settings.range;
+
+    for (var i = 0; i < numTerms; i++) {
+        var num = randomInt(1, rangeMax);
+        if (settings.allowNegative && Math.random() < 0.3) {
+            num = -num;
+        }
+        nums.push(num);
+    }
+
+    var opCount = numTerms - 1;
+    var availableOps = settings.operations;
+    var availLen = availableOps.length;
+    for (var j = 0; j < opCount; j++) {
+        ops.push(availableOps[randomInt(0, availLen - 1)]);
+    }
+
+    for (var k = 0; k < ops.length; k++) {
+        if (ops[k] === '/') {
+            var divisor = Math.abs(nums[k + 1]);
+            if (divisor < 1) {
+                divisor = 1;
             }
-        };
+            var multiplier = randomInt(1, Math.floor(rangeMax / divisor));
+            if (multiplier < 1) {
+                multiplier = 1;
+            }
+            var sign = (nums[k] < 0) ? -1 : 1;
+            nums[k] = divisor * multiplier * sign;
+        }
+    }
 
-        // App state
-        let currentLang = 'en';
-        let currentProblem = null;
-        let stats = { correct: 0, wrong: 0, total: 0 };
-        let settings = {
-            range: 100,
-            terms: 2,
-            allowNegative: false,
-            operations: ['+', '-', '*']
-        };
+    var expression = '' + nums[0];
+    var result = nums[0];
 
-        // DOM elements
-        const elements = {
-            langSelector: document.getElementById('langSelector'),
-            title: document.getElementById('title'),
-            subtitle: document.getElementById('subtitle'),
-            correctCount: document.getElementById('correctCount'),
-            totalCount: document.getElementById('totalCount'),
-            wrongCount: document.getElementById('wrongCount'),
-            correctLabel: document.getElementById('correctLabel'),
-            totalLabel: document.getElementById('totalLabel'),
-            wrongLabel: document.getElementById('wrongLabel'),
-            problem: document.getElementById('problem'),
-            answerInput: document.getElementById('answerInput'),
-            submitBtn: document.getElementById('submitBtn'),
-            newProblemBtn: document.getElementById('newProblemBtn'),
-            skipBtn: document.getElementById('skipBtn'),
-            resetBtn: document.getElementById('resetBtn'),
-            rangeSelect: document.getElementById('rangeSelect'),
-            termsSelect: document.getElementById('termsSelect'),
-            negativeSelect: document.getElementById('negativeSelect'),
-            rangeLabel: document.getElementById('rangeLabel'),
-            termsLabel: document.getElementById('termsLabel'),
-            negativeLabel: document.getElementById('negativeLabel'),
-            operationsLabel: document.getElementById('operationsLabel'),
-            opBtns: document.querySelectorAll('.op-btn')
-        };
-
-        // Utility functions
-        function t(key) {
-            return translations[currentLang][key] || key;
+    for (var m = 0; m < ops.length; m++) {
+        var opSymbol = ops[m];
+        var nextNum = nums[m + 1];
+        if (opSymbol === '*') {
+            expression = expression + ' × ' + nextNum;
+        } else if (opSymbol === '/') {
+            expression = expression + ' ÷ ' + nextNum;
+        } else {
+            expression = expression + ' ' + opSymbol + ' ' + nextNum;
         }
 
-        function random(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+        if (opSymbol === '+') {
+            result = result + nextNum;
+        } else if (opSymbol === '-') {
+            result = result - nextNum;
+        } else if (opSymbol === '*') {
+            result = result * nextNum;
+        } else if (opSymbol === '/') {
+            result = result / nextNum;
         }
+    }
 
-        function updateUI() {
-            // Update page title and meta description
-            document.title = t('pageTitle');
-            document.querySelector('meta[name="description"]').content = t('pageDescription');
-            
-            elements.title.textContent = t('title');
-            elements.subtitle.textContent = t('subtitle');
-            elements.correctLabel.textContent = t('correctLabel');
-            elements.totalLabel.textContent = t('totalLabel');
-            elements.wrongLabel.textContent = t('wrongLabel');
-            elements.answerInput.placeholder = t('yourAnswer');
-            elements.submitBtn.textContent = t('submit');
-            elements.newProblemBtn.textContent = t('newProblem');
-            elements.skipBtn.textContent = t('skip');
-            elements.resetBtn.textContent = t('reset');
-            elements.rangeLabel.textContent = t('rangeLabel');
-            elements.termsLabel.textContent = t('termsLabel');
-            elements.negativeLabel.textContent = t('negativeLabel');
-            elements.operationsLabel.textContent = t('operationsLabel');
+    result = Math.round(result);
 
-            // Update select options
-            elements.negativeSelect.options[0].textContent = t('positiveOnly');
-            elements.negativeSelect.options[1].textContent = t('allowNegative');
-            elements.termsSelect.options[0].textContent = t('terms2');
-            elements.termsSelect.options[1].textContent = t('terms3');
-            elements.termsSelect.options[2].textContent = t('terms4');
+    return { expression: expression, result: result };
+}
 
-            if (!currentProblem) {
-                elements.problem.textContent = t('clickToStart');
-            }
-        }
+function newProblem() {
+    readSettings();
+    if (settings.operations.length === 0) {
+        alert(t('selectOperation'));
+        return;
+    }
+    currentProblem = generateProblem();
+    problemEl.textContent = currentProblem.expression;
+    problemEl.style.color = '#e6e6e6';
+    answerInput.value = '';
+    answerInput.focus();
+}
 
-        function updateStats() {
-            elements.correctCount.textContent = stats.correct;
-            elements.wrongCount.textContent = stats.wrong;
-            elements.totalCount.textContent = stats.total;
-        }
+function submitAnswer() {
+    if (!currentProblem) {
+        return;
+    }
+    var userAnswer = parseInt(answerInput.value, 10);
+    if (isNaN(userAnswer)) {
+        return;
+    }
 
-        function generateProblem() {
-            const nums = [];
-            const ops = [];
-            
-            // Generate numbers
-            for (let i = 0; i < settings.terms; i++) {
-                let num = random(1, settings.range);
-                if (settings.allowNegative && Math.random() < 0.3) {
-                    num = -num;
-                }
-                nums.push(num);
-            }
+    stats.total = stats.total + 1;
 
-            // Generate operations
-            for (let i = 0; i < settings.terms - 1; i++) {
-                ops.push(settings.operations[random(0, settings.operations.length - 1)]);
-            }
+    if (userAnswer === currentProblem.result) {
+        stats.correct = stats.correct + 1;
+        problemEl.textContent = t('correctMsg');
+        problemEl.style.color = '#3fb950';
+    } else {
 
-            // Handle division to ensure integer results
-            for (let i = 0; i < ops.length; i++) {
-                if (ops[i] === '/') {
-                    const divisor = Math.max(1, Math.abs(nums[i + 1]));
-                    const multiplier = random(1, Math.floor(settings.range / divisor));
-                    nums[i] = divisor * multiplier * (nums[i] < 0 ? -1 : 1);
-                }
-            }
+        stats.wrong = stats.wrong + 1;
+        problemEl.textContent = t('wrongMsg') + ' ' + currentProblem.result;
+        problemEl.style.color = '#f85149';
+    }
 
-            // Build expression and calculate result
-            let expression = nums[0].toString();
-            let result = nums[0];
+    updateStatsDisplay();
 
-            for (let i = 0; i < ops.length; i++) {
-                const op = ops[i];
-                const num = nums[i + 1];
-                expression += ` ${op === '*' ? '×' : op === '/' ? '÷' : op} ${num}`;
-                
-                switch (op) {
-                    case '+': result += num; break;
-                    case '-': result -= num; break;
-                    case '*': result *= num; break;
-                    case '/': result /= num; break;
-                }
-            }
+    setTimeout(function () {
+        problemEl.style.color = '#e6e6e6';
+        newProblem();
+    }, 2000);
+}
+function skipProblem() {
+    if (currentProblem) {
+        newProblem();
+    }
+}
 
-            return { expression, result: Math.round(result) };
-        }
+function resetStats() {
+    stats.correct = 0;
+    stats.wrong = 0;
+    stats.total = 0;
+    updateStatsDisplay();
+    currentProblem = null;
+    problemEl.textContent = t('clickToStart');
+    problemEl.style.color = '#e6e6e6';
+    answerInput.value = '';
+}
 
-        function newProblem() {
-            if (settings.operations.length === 0) {
-                alert(t('selectOperation'));
-                return;
-            }
+function toggleOpBtn(btn) {
+    if (btn.className.indexOf('active') !== -1) {
+        btn.className = btn.className.replace('active', '');
+    } else {
+        btn.className = btn.className + ' active';
+    }
+    readSettings();
+}
+langSelector.addEventListener('change', function () {
+    currentLang = langSelector.value;
+    updateUI();
+});
 
-            currentProblem = generateProblem();
-            elements.problem.textContent = currentProblem.expression;
-            elements.answerInput.value = '';
-            elements.answerInput.focus();
-        }
+newProblemBtn.addEventListener('click', function () {
+    newProblem();
+});
 
-        function submitAnswer() {
-            if (!currentProblem) return;
+submitBtn.addEventListener('click', function () {
+    submitAnswer();
+});
 
-            const userAnswer = parseInt(elements.answerInput.value);
-            if (isNaN(userAnswer)) return;
+answerInput.addEventListener('keypress', function (e) {
+    if (e.keyCode === 13 || e.key === 'Enter') {
+        submitAnswer();
+    }
+});
 
-            stats.total++;
-            
-            if (userAnswer === currentProblem.result) {
-                stats.correct++;
-                elements.problem.textContent = t('correct');
-                elements.problem.style.color = '#10b981';
-            } else {
-                stats.wrong++;
-                elements.problem.textContent = `${t('wrong')}: ${currentProblem.result}`;
-                elements.problem.style.color = '#ef4444';
-            }
+skipBtn.addEventListener('click', function () {
+    skipProblem();
+});
 
-            updateStats();
-            
-            setTimeout(() => {
-                elements.problem.style.color = '#f8fafc';
-                newProblem();
-            }, 2000);
-        }
 
-        function skipProblem() {
-            if (currentProblem) {
-                newProblem();
-            }
-        }
+resetBtn.addEventListener('click', function () {
+    resetStats();
+});
 
-        function resetStats() {
-            stats = { correct: 0, wrong: 0, total: 0 };
-            updateStats();
-            currentProblem = null;
-            elements.problem.textContent = t('clickToStart');
-        }
+rangeSelect.addEventListener('change', function () {
+    readSettings();
+});
+termsSelect.addEventListener('change', function () {
+    readSettings();
+});
+negativeSelect.addEventListener('change', function () {
+    readSettings();
+});
 
-        function updateSettings() {
-            settings.range = parseInt(elements.rangeSelect.value);
-            settings.terms = parseInt(elements.termsSelect.value);
-            settings.allowNegative = elements.negativeSelect.value === 'true';
-            
-            settings.operations = Array.from(elements.opBtns)
-                .filter(btn => btn.classList.contains('active'))
-                .map(btn => btn.dataset.op);
-        }
+for (var i = 0; i < opBtns.length; i++) {
+    opBtns[i].addEventListener('click', function () {
+        toggleOpBtn(this);
+    });
+}
 
-        // Event listeners
-        elements.langSelector.addEventListener('change', (e) => {
-            currentLang = e.target.value;
-            // Update HTML lang attribute
-            document.documentElement.lang = currentLang;
-            updateUI();
-        });
 
-        elements.newProblemBtn.addEventListener('click', () => {
-            updateSettings();
-            newProblem();
-        });
-
-        elements.submitBtn.addEventListener('click', submitAnswer);
-
-        elements.answerInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                submitAnswer();
-            }
-        });
-
-        elements.skipBtn.addEventListener('click', skipProblem);
-        elements.resetBtn.addEventListener('click', resetStats);
-
-        elements.rangeSelect.addEventListener('change', updateSettings);
-        elements.termsSelect.addEventListener('change', updateSettings);
-        elements.negativeSelect.addEventListener('change', updateSettings);
-
-        elements.opBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.classList.toggle('active');
-                updateSettings();
-            });
-        });
-
-        // Initialize
-        updateUI();
-        updateStats();
+updateUI();
+updateStatsDisplay();
+readSettings();
