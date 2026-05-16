@@ -58,5 +58,11 @@
     "path": "/AlienHunt/index.html",
     "description": "A classic Alien Hunt game for players",
     "category": "Game"
+  },
+  {
+    "name": "Duck Hunt Game",
+    "path": "/DuckHunt/index.html",
+    "description": "A classic Duck Hunt game for players",
+    "category": "Game"
   }
 ]

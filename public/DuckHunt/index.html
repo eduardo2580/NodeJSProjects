@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Duck Hunt</title>
+        <link rel="stylesheet" href="duckhunt.css">
+    </head>
+    <body>
+        <!-- Game UI -->
+        <div id="gameUI">
+            <div id="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Time:</span>
+                    <span id="timer">60</span>s
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Misses:</span>
+                    <span id="misses">0</span>/5
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="gameOverModal" class="modal hidden">
+            <div class="modal-content">
+                <h1 id="gameOverTitle">GAME OVER!</h1>
+                <p id="gameOverMessage"></p>
+                <div class="final-stats">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Ducks Defeated: <span id="ducksDefeated">0</span></p>
+                </div>
+                <button onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+
+        <script src="duckhunt.js"></script>
+    </body>
+</html>
