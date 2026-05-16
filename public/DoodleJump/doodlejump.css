@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+}
+
+#board {
+    /* background-color: green; */
+    background-image: url("./doodlejumpbg.png");
+    /* Responsive: scale to available width while keeping internal resolution */
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Touch controls */
+#touch-controls {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 0 10px;
+    pointer-events: none; /* allow only buttons to receive events */
+}
+.touch-btn {
+    pointer-events: auto;
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    border: none;
+    width: 86px;
+    height: 56px;
+    border-radius: 8px;
+    font-size: 28px;
+    touch-action: none;
+}
+
+@media (min-width: 420px) {
+    #touch-controls { display: none; }
+}

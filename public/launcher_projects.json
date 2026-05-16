@@ -70,5 +70,11 @@
     "path": "/PacMan/index.html",
     "description": "A classic PacMan game for players",
     "category": "Game"
+  },
+  {
+    "name": "Doodle Jump",
+    "path": "/DoodleJump/index.html",
+    "description": "A Doodle Jump game for players",
+    "category": "Game"
   }
 ]
